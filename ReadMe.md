@@ -1,4 +1,4 @@
-#Web Crawler
+# Web Crawler
 This application recevies a URL as an input and crawles the web page for the following
     - HTML Version
     - Page Title
@@ -7,20 +7,23 @@ This application recevies a URL as an input and crawles the web page for the fol
     - Amount of inaccessible links
     - If a page contains a login form
 
-##Build & Run
+## Build & Run
 'go build' will generate the binary of the name 'htmlparser'
 Running the binary will launch the HTTP web server that listens on Port 8011. 
 
-##Application & Usage
+## Application & Usage
 This application is a http api that hosts the following endpoint 
 POST <url:8011>/parse/url
 
 The body of the incoming request should be of the type down below
+```josn
 {
     "url":"https://www.google.com"
 }
+```
 
 The response will be of the type given down below
+```json
 {
     "title": "Google",
     "version": "HTML 5",
@@ -64,3 +67,4 @@ The response will be of the type given down below
     ],
     "isLoginForm": true,
 }
+```
