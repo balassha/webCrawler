@@ -1,7 +1,8 @@
-#Design
+# Design
 This application is designed as a http api service which can take an URL of the format
-<http/https://hostname>.
-
+```json
+<https://url> or <http://url>
+```
 My Initial consideration was to build a WebUI along with Webserver to host the application. But later I decided to implement only the API service. The reason being,
 It is a good practice to try and solve the core problem (It is the requirements in this case) rather than thinking about the surrounding areas.
 
