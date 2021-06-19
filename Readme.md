@@ -23,6 +23,8 @@ The API accepts a JSON body. The structure of the input json is given down below
     "url":"https://www.google.com"
 }
 ```
+The application waits for 10 seconds to confirm if the External URL is inaccessible.
+This is defined by the Timeout attribute in the HTTP client. It is configurable.
 
 The response is of type JSON and a sample response is given down below
 ```json
