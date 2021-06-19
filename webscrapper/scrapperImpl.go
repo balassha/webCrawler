@@ -54,7 +54,6 @@ func ProcessInaccessibleLinks(client *httpClient.HttpClient, externalLinks []str
 	}()
 	for url := range output {
 		if url != "" {
-			fmt.Println(url)
 			response = append(response, url)
 		}
 	}
@@ -66,6 +65,7 @@ func checkURL(client *httpClient.HttpClient, url string, ch *chan string, wg *sy
 	defer wg.Done()
 	status, err := client.MakeRequestWithoutResponseBody(url)
 	if err != nil {
+		fmt.Println(err)
 		*ch <- url
 		return
 	}

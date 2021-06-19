@@ -89,6 +89,10 @@ func TestProcessInaccessibleLinks(t *testing.T) {
 			links:    []string{"https://www.google.com", "https://www.google.com"},
 			expected: 0,
 		},
+		{
+			links:    []string{"https://www.google.co.in", "https://www.google.com"},
+			expected: 0,
+		},
 	}
 	var client httpClient.HttpClient
 	client.Initialize()
