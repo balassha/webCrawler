@@ -20,55 +20,168 @@ POST <host:8011>/parse/url
 The API accepts a JSON body. The structure of the input json is given down below.
 ```josn
 {
-    "url":"https://www.google.com"
+    "url":"https://www.home24.com/websites/homevierundzwanzig/English/0/home24.html"
 }
 ```
 The application waits for 10 seconds to confirm if the External URL is inaccessible.
 This is defined by the Timeout attribute in the HTTP client. It is configurable.
 
 The response is of type JSON and a sample response is given down below
-```json
+```yaml
 {
-    "title": "Google",
+    "title": "home24 | The online destination for home and living.",
     "version": "HTML 5",
+    "headingsCount": {
+        "h1": 0,
+        "h2": 0,
+        "h3": 3,
+        "h4": 4,
+        "h5": 0,
+        "h6": 0
+    },
     "links": {
         "ExternalLinks": [
-            "https://www.google.co.in/imghp?hl=en&tab=wi",
-            "https://maps.google.co.in/maps?hl=en&tab=wl",
-            "https://play.google.com/?hl=en&tab=w8",
-            "https://www.youtube.com/?gl=IN&tab=w1",
-            "https://news.google.com/?tab=wn",
-            "https://mail.google.com/mail/?tab=wm",
-            "https://drive.google.com/?tab=wo",
-            "https://www.google.co.in/intl/en/about/products?tab=wh",
-            "http://www.google.co.in/history/optout?hl=en",
-            "https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/&ec=GAZAAQ",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=hi&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAU",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=bn&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAY",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=te&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAc",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=mr&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAg",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=ta&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAk",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=gu&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAo",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=kn&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAs",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=ml&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCAw",
-            "https://www.google.com/setprefs?sig=0_fBDKunrHij8Z9218glxgCGlyWKM%3D&hl=pa&source=homepage&sa=X&ved=0ahUKEwjE8qSCwaHxAhWzyzgGHYkgBmcQ2ZgBCA0",
-            "http://www.google.co.in/services/",
-            "https://www.google.com/setprefdomain?prefdom=IN&prev=https://www.google.co.in/&sig=K_wZVpjI-qkMdRYbNE3kQaP9OtH1Q%3D"
+            "https://www.home24.com/websites/homevierundzwanzig/English/1/homepage.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/7000/contact.html",
+            "https://www.home24.com/websites/homevierundzwanzig/German/0/home24.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1000/about-us.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1100/who-we-are.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1200/story-of-home24.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1300/products-and-brands.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1400/a-unique-model.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/2000/our-team.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/2100/management-board.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/2200/supervisory-board.html",
+            "https://home24.career.softgarden.de/en/",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4000/investor-relations.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4050/share.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4100/capital-increase.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4300/publications.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4400/corporate-governance.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4450/general-meeting.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4500/news.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4550/financial-calendar.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4600/ir-contact.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/5000/newsroom.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/5100/press-releases.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/6000/imprint.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/8000/data-protection-declaration.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/0/home24.html",
+            "https://home24.career.softgarden.de/en/ ",
+            "https://www.home24.de/",
+            "https://www.home24.at/",
+            "https://www.home24.ch/",
+            "https://www.home24.be/",
+            "https://www.home24.nl/",
+            "https://www.home24.fr/",
+            "https://www.home24.it/",
+            "https://www.mobly.com.br/ ",
+            "https://twitter.com/home24_de",
+            "https://www.facebook.com/home24.de",
+            "https://www.linkedin.com/company/home24/",
+            "https://www.instagram.com/home24_de/",
+            "https://www.youtube.com/user/home24TV",
+            "https://www.pinterest.de/home24de/"
         ],
         "InternalLinks": [
-            "/preferences?hl=en",
-            "/advanced_search?hl=en-IN&authuser=0",
-            "/intl/en/ads/",
-            "/intl/en/about.html",
-            "/intl/en/policies/privacy/",
-            "/intl/en/policies/terms/"
+            "javascript:void(0);",
+            "tel:+493020389966",
+            "mailto:info@home24.de",
+            "tel:+4930700149000",
+            "tel:+4930609880019"
         ]
     },
-    "headingsCount": null,
     "inaccessibleLinks": [
-        "https://www.youtube.com/?gl=IN&tab=w1",
-        "https://maps.google.co.in/maps?hl=en&tab=wl"
+        "https://www.linkedin.com/company/home24/",
+        "https://www.instagram.com/home24_de/",
+        "https://home24.career.softgarden.de/en/ ",
+        "https://www.mobly.com.br/ "
     ],
-    "isLoginForm": true,
+    "isLoginForm": true
+}
+```
+
+## Another Example - https://www.home24.com/websites/homevierundzwanzig/English/8000/data-protection-declaration.html
+
+```yaml
+{   
+    "title": "Data Protection Declaration | home24 Corporate Website",
+    "version": "HTML 5",
+    "headingsCount": {
+        "h1": 0,
+        "h2": 0,
+        "h3": 13,
+        "h4": 4,
+        "h5": 1,
+        "h6": 0
+    },
+    "links": {
+        "ExternalLinks": [
+            "https://www.home24.com/websites/homevierundzwanzig/English/1/homepage.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/7000/contact.html",
+            "https://www.home24.com/websites/homevierundzwanzig/German/8000/data-protection-declaration.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1000/about-us.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1100/who-we-are.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1200/story-of-home24.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1300/products-and-brands.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/1400/a-unique-model.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/2000/our-team.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/2100/management-board.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/2200/supervisory-board.html",
+            "https://home24.career.softgarden.de/en/",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4000/investor-relations.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4050/share.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4100/capital-increase.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4300/publications.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4400/corporate-governance.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4450/general-meeting.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4500/news.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4550/financial-calendar.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/4600/ir-contact.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/5000/newsroom.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/5100/press-releases.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/6000/imprint.html",
+            "https://www.home24.com/websites/homevierundzwanzig/English/8000/data-protection-declaration.html",
+            "https://www.home24.de/",
+            "https://www.home24.at/",
+            "https://www.home24.ch/",
+            "https://www.home24.be/",
+            "https://www.home24.nl/",
+            "https://www.home24.fr/",
+            "https://www.home24.it/",
+            "https://www.mobly.com.br/ ",
+            "https://twitter.com/home24_de",
+            "https://www.facebook.com/home24.de",
+            "https://www.linkedin.com/company/home24/",
+            "https://www.instagram.com/home24_de/",
+            "https://www.youtube.com/user/home24TV",
+            "https://www.pinterest.de/home24de/"
+        ],
+        "InternalLinks": [
+            "javascript:void(0);",
+            "tel:+493020389966",
+            "mailto:info@home24.de",
+            "#_Toc14706386",
+            "#_Toc14706386a",
+            "#_Toc14706387a",
+            "#_Toc14706387",
+            "#_Toc14706388",
+            "#_Toc14706389",
+            "#_Toc14706390",
+            "#_Toc14706391",
+            "#_Toc14706392",
+            "#_Toc14706393",
+            "#_Toc14706394",
+            "#_Toc14706395",
+            "tel:+4930700149000",
+            "tel:+4930609880019"
+        ]
+    },
+    "inaccessibleLinks": [
+        "https://www.instagram.com/home24_de/",
+        "https://www.linkedin.com/company/home24/",
+        "https://www.mobly.com.br/ "
+    ],
+    "isLoginForm": true
 }
 ```
