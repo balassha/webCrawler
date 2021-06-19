@@ -1,28 +1,30 @@
 # Web Crawler
-This application recevies a URL as an input and crawles the web page for the following
+This application recevies a URL as an input, sends a HTTP Get to the URL and crawles the response web page for the following data
+```
     - HTML Version
     - Page Title
     - Headings count by level
     - Amount of internal and external links
     - Amount of inaccessible links
     - If a page contains a login form
-
+```
 ## Build & Run
-'go build' will generate the binary of the name 'htmlparser'
+'go build' will generate the binary of the name 'htmlparser'.
 Running the binary will launch the HTTP web server that listens on Port 8011. 
 
 ## Application & Usage
-This application is a http api that hosts the following endpoint 
-POST <url:8011>/parse/url
-
-The body of the incoming request should be of the type down below
+This application is a Restful HTTP API that hosts the following endpoint 
+```
+POST <host:8011>/parse/url
+```
+The API accepts a JSON body. The structure of the input json is given down below.
 ```josn
 {
     "url":"https://www.google.com"
 }
 ```
 
-The response will be of the type given down below
+The response is of type JSON and a sample response is given down below
 ```json
 {
     "title": "Google",
