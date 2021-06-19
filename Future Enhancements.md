@@ -5,4 +5,5 @@
 4. Containerization of the Application using Docker if required
 5. Create a Worker pool pattern to use in the check for Inaccessible links
 6. Improve logic to identify if the webpage has a login form
+7. Introduce log levels
 

@@ -85,28 +85,3 @@ func SliceContains(slice []string, value string) bool {
 	}
 	return false
 }
-
-//Parse the HTML node tree and find headings,Form and Links
-func ParseHtml(n *html.Node, headings map[string]int, links []string, isForm *bool) []string {
-
-	if _, exists := headings[n.Data]; exists {
-		headings[n.Data]++
-	}
-	if n.Data == "form" {
-		*isForm = true
-	}
-
-	if n.Type == html.ElementNode && n.Data == "a" {
-		for _, a := range n.Attr {
-			if a.Key == "href" {
-				if !SliceContains(links, a.Val) {
-					links = append(links, a.Val)
-				}
-			}
-		}
-	}
-	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		links = ParseHtml(c, headings, links, isForm)
-	}
-	return links
-}

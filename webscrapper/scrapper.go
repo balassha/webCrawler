@@ -44,14 +44,39 @@ func (s *Scrapper) GetTitle() (string, error) {
 	return GetPageTitle(s.Node), nil
 }
 
+//Parses the HTML node tree and gets relevant information
+func (s *Scrapper) ParseHtmlFile() {
+	s.UpdateHeadings()
+	s.Links = s.ParseHtml(s.Node, nil)
+}
+
+//Parse the HTML node tree and find headings,Form and Links
+func (s *Scrapper) ParseHtml(n *html.Node, links []string) []string {
+	if _, exists := s.Headings[n.Data]; exists {
+		s.Headings[n.Data]++
+	}
+	if n.Data == "form" {
+		s.IsLogin = true
+	}
+
+	if n.Type == html.ElementNode && n.Data == "a" {
+		for _, a := range n.Attr {
+			if a.Key == "href" {
+				if !SliceContains(links, a.Val) {
+					links = append(links, a.Val)
+				}
+			}
+		}
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		links = s.ParseHtml(c, links)
+	}
+	return links
+}
+
 //Return the count of headings
 func (s *Scrapper) GetHeadingsCount() (map[string]int, error) {
 	return s.Headings, nil
-}
-
-//Parses the HTML node tree and gets relevant information
-func (s *Scrapper) ParseHtmlFile() {
-	s.Links = ParseHtml(s.Node, s.Headings, nil, &s.IsLogin)
 }
 
 //Identify Internal and External links

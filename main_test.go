@@ -70,15 +70,15 @@ func TestProcessInaccessibleLinks(t *testing.T) {
 		expected int
 	}{
 		{
-			links:    []string{""},
-			expected: 0,
-		},
-		{
-			links:    []string{"1"},
+			links:    []string{"http://"},
 			expected: 1,
 		},
 		{
-			links:    []string{".com"},
+			links:    []string{"https://"},
+			expected: 1,
+		},
+		{
+			links:    []string{"https://com"},
 			expected: 1,
 		},
 		{
