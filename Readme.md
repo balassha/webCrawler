@@ -101,7 +101,7 @@ The response is of type JSON and a sample response is given down below
 }
 ```
 
-## Another Example - https://www.home24.com/websites/homevierundzwanzig/English/8000/data-protection-declaration.html
+## Another Example  https://www.home24.com/websites/homevierundzwanzig/English/8000/data-protection-declaration.html
 
 ```yaml
 {   
